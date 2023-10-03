@@ -1,9 +1,9 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 const Detail = () => {
-  const {id} = useParams()
-  const [character, setCharacter] = useState({})
+  const { id } = useParams();
+  const [character, setCharacter] = useState({});
 
   useEffect(() => {
     console.log("Estoy por pedir la informacion del personaje")
@@ -26,7 +26,7 @@ const Detail = () => {
       <h2>Origin: {character.origin?.name}</h2>
       <img src={character?.image} alt="" />
     </div>
-  )
-}
+  );
+};
 
-export default Detail
+export default Detail;
