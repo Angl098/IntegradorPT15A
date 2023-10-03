@@ -1,0 +1,13 @@
+.App {
+   width: 100vw;
+   height: 100vh;
+   /* min-height: 100vh;
+   margin: 0px; */
+   background: #17141d;
+}
+.body{
+   min-height: 100vh;
+   margin: -5px;
+   top: 0;
+   bottom: 0;
+}

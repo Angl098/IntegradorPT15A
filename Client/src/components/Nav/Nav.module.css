@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Raleway:wght@100&family=Roboto+Mono:wght@600&family=Roboto:wght@300&display=swap');
+
+.navBar{
+    /* max-width: 900px; */
+    /* background: #17141d; */
+    font-size: 22px;
+    font-family: 'Roboto', monospace;
+    margin: 0;
+    padding: 0;
+    /* width: auto; */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.home{
+    color: wheat;
+    text-decoration: none;
+}
+.about{
+    text-decoration: none;
+    color: wheat;
+}
