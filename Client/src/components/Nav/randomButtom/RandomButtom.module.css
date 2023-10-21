@@ -1,0 +1,19 @@
+.random{
+    text-align: center;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    background: #17141d;
+    border: 1.5px solid wheat;
+    text-align: center;
+    color: wheat;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 2ms ;
+}
+
+.random:hover, .random:focus {
+    background-color: wheat;
+    color: #17141d;
+}

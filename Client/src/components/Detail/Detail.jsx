@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 const Detail = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
 
   useEffect(() => {
     console.log("Estoy por pedir la informacion del personaje")
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+    axios(`http://localhost:3001/rickandmorty/character/${id}`)
+    .then(({ data }) => {
       if (data.name) {
           setCharacter(data);
       } else {

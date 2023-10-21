@@ -1,0 +1,24 @@
+.favorites{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.filter{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filterButtom{
+
+    background: #17141d;
+    border: 1.5px solid wheat;
+    text-align: center;
+    color: wheat;
+    border-radius: 15px;
+    font-size: 14px;
+}

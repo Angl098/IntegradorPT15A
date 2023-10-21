@@ -10,6 +10,7 @@ import About from "./components/About/About.jsx";
 import Detail from "./components/Detail/Detail.jsx";
 import Form from "./components/Form/Form";
 import Favorites from './components/Favorites/Favorites';
+import RandomButton from './components/Nav/randomButtom/RandomButtom';
 
 function App() {
 
@@ -18,24 +19,7 @@ function App() {
   
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-  // const EMAIL = 'angeles@gmail.com'; 
-  // const PASSWORD = '123456';
-  
-  // function login(userData) {
-  //   if (userData.password === PASSWORD && userData.email === EMAIL) {
-  //     setAccess(true);
-  //     navigate('/home');
-  //   }
-  // }
-  // function login(userData) {
-  //   const { email, password } = userData;
-  //   const URL = 'http://localhost:3001/rickandmorty/login/';
-  //   axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-  //       const { access } = data;
-  //       setAccess(data);
-  //       access && navigate('/home');
-  //   });
-  // }
+
   async function login(userData) {
     try {
       const { email, password } = userData;
@@ -52,15 +36,7 @@ function App() {
     !access && navigate('/');
   }, [access]);
   
-  // const onSearch = (id) => {
-  //   axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
-  //     if (data.name) {
-  //       setCharacters((oldChars) => [...oldChars, data]);
-  //     } else {
-  //       window.alert('¡No hay personajes con este ID!');
-  //     }
-  //   });
-  // }
+  
   const onSearch = async (id) => {
     try {
       const {data} = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
@@ -79,9 +55,26 @@ const onClose = (id) => {
   )
 }
 
+async function getRandomCharacter() {
+  const randomId = Math.floor(Math.random() * 826) + 1;
+  try {
+      const response = await axios(`http://localhost:3001/rickandmorty/character/${randomId}`)
+      return response.data
+  } catch (error) {
+      window.alert(error.message);
+  }
+  
+}
+async function onRandom() {
+  const randomCharacter = await getRandomCharacter();
+  if (randomCharacter) {
+      setCharacters((prevCharacters) => [...prevCharacters, randomCharacter]);
+  }
+}
+
   return (
     <div className='App'>
-      {pathname !== '/' && <Nav onSearch={onSearch}/> }
+      {pathname !== '/' && <Nav onSearch={onSearch} onRandom={onRandom} /> }
       <Routes>
         <Route path={'/'} element={<Form login={login} />}/> 
         <Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />}/>
