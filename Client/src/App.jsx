@@ -6,11 +6,10 @@ import PATHROUTES from "./helpers/PathRoutes.helper.js";
 
 import Nav from "./components/Nav/Nav.jsx";
 import Cards from "./components/Cards/Cards.jsx";
-import About from "./components/About/About.jsx";
 import Detail from "./components/Detail/Detail.jsx";
-import Form from "./components/Form/Form";
+// import Form from "./components/Form/Form";
 import Favorites from './components/Favorites/Favorites';
-import RandomButton from './components/Nav/randomButtom/RandomButtom';
+import Login from './components/Login.jsx';
 
 function App() {
 
@@ -18,23 +17,23 @@ function App() {
   const [characters, setCharacters] = useState([])
   
   const navigate = useNavigate();
-  const [access, setAccess] = useState(false);
+  // const [access, setAccess] = useState(false);
 
-  async function login(userData) {
-    try {
-      const { email, password } = userData;
-      const URL = 'http://localhost:3001/rickandmorty/login/';
-      const {data} = await axios(URL + `?email=${email}&password=${password}`)
-      const { access } = data;
-      setAccess(data);
-      access && navigate('/home');
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  useEffect(() => {
-    !access && navigate('/');
-  }, [access]);
+  // async function login(userData) {
+  //   try {
+  //     const { email, password } = userData;
+  //     const URL = 'http://localhost:3001/rickandmorty/login/';
+  //     const {data} = await axios(URL + `?email=${email}&password=${password}`)
+  //     const { access } = data;
+  //     setAccess(data);  
+  //     access && navigate('/home');
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+  // useEffect(() => {
+  //   access && navigate('/');
+  // }, [access]);
   
   
   const onSearch = async (id) => {
@@ -76,12 +75,11 @@ async function onRandom() {
     <div className='App'>
       {pathname !== '/' && <Nav onSearch={onSearch} onRandom={onRandom} /> }
       <Routes>
-        <Route path={'/'} element={<Form login={login} />}/> 
+        <Route path={'/'} element={<Login/>}/> 
         <Route path={PATHROUTES.HOME} element={<Cards characters={characters} onClose={onClose} />}/>
-        <Route path={PATHROUTES.ABOUT} element={<About/>}/>
         <Route path={PATHROUTES.DETAIL} element={<Detail />}/>
         <Route path={PATHROUTES.FAVORITES} element={<Favorites />}/>
-      </Routes> 
+      </Routes>  
     </div>
   );
 }

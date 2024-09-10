@@ -1,10 +1,11 @@
 import styles from "./RandomButtom.module.css"
 
-export default function RandomButton({onRandom}){
+export default function RandomButton({ onRandom }) {
 
-    return(
+    return (
         <>
-            <button className={styles.random} onClick={()=>{onRandom()}}> Add
+            <button className={styles.random} onClick={() => { onRandom() }}
+                >Add Card
             </button>
         </>
     )

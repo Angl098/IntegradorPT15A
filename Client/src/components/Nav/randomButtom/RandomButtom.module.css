@@ -1,11 +1,8 @@
 .random{
-    text-align: center;
-    padding: 5px;
-    width: 40px;
-    height: 40px;
+    display: flex;
+    padding: 10px;
     background: #17141d;
     border: 1.5px solid wheat;
-    text-align: center;
     color: wheat;
     border-radius: 15px;
     font-size: 14px;

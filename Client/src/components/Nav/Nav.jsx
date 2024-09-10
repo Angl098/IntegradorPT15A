@@ -11,7 +11,7 @@ const Nav = (props) => {
     <div className={styles.navBar}>
       <RandomButton onRandom={onRandom} />
       <Link className={styles.home} to={PATHROUTES.HOME}>Home</Link>
-      <Link className={styles.about} to={PATHROUTES.ABOUT}>About</Link>
+      {/* <Link className={styles.about} to={PATHROUTES.ABOUT}>About</Link> */}
       <Link className={styles.about} to={PATHROUTES.FAVORITES}>Favorites</Link>
         <SearchBar onSearch={onSearch} />
     </div>

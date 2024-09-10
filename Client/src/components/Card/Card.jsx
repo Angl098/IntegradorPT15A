@@ -4,7 +4,6 @@ import {addFav, removeFav} from '../../redux/actions'
 import { connect } from 'react-redux';
 import { useState, useEffect} from 'react'
 
-
 const Card = (props) => {
   const { id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites } = props;
   

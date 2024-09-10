@@ -32,7 +32,8 @@ const Favorites = (props) => {
             <option value="unknown">unknown</option>
         </select>
         </div>
-        {myFavorites.map((char) => {
+        <div className={styles.cards}>
+            {myFavorites.map((char) => {
             return(
                 <Card 
                 key={char.id}
@@ -45,6 +46,8 @@ const Favorites = (props) => {
                 image={char.image}/>
             );
         })}
+        </div>
+        
     </div>
     );
 };

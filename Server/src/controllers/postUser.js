@@ -2,9 +2,8 @@ const { User } = require('../DB_connection')
 
 const postUser = async (req, res)=>{
     const { email, password } = req.body;
-    //await
     try {
-        if (email && password) {
+        if (email && password) {            
             const [ newUser ] = await User.findOrCreate({
                 where: { email, password }
             });

@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Raleway:wght@100&family=Roboto+Mono:wght@600&family=Roboto:wght@300&display=swap');
 
 .card{
-    width: 320px;
-    /* width: 100%; */
-    height: 400px;
+    width: auto;
     margin: 0px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     font-family: 'Roboto Mono', monospace;
-    gap: 40px;
     border-radius: 0.6rem;
     box-shadow: -0rem 0 3rem #000;
     overflow: hidden;
@@ -22,18 +19,17 @@
 
 .wrapper{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
 
 }
 .name{
+    display:flex;
+    justify-content: center;
+    text-align: center;
     font-size: 16px;
     position: absolute;
+    background-color: black;
     bottom: 20px;
-    color: wheat;
-    margin-left: 5px;
     border-radius: 4px;
     padding: 0.5em 1em;
 }
@@ -45,7 +41,6 @@
     position: absolute;
     background-color: #2e2938;
     box-shadow: -0rem 0 2rem #212121;
-    /* background: linear-gradient(hsl(0 0% 0% / 0),hsl(0, 0%, 11%)); */
     font-size: 13px;
     text-align: start;
     padding: 15px;

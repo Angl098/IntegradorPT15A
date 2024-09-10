@@ -18,7 +18,7 @@ const rootReducer = (state = initialState, {type, payload}) => {
                 myFavorites: copy3
             }
         case 'ORDER':
-            let copy4 = states.allCharacters.sort((a,b) =>{
+            let copy4 = state.allCharacters.sort((a,b) =>{
                 if (payload === 'A') {
                     return a.id - b.id
                 } else if (payload === 'D'){
